@@ -1,0 +1,14 @@
+<mat-menu #subMenu="matMenu" [overlapTrigger]="false">
+  <span *ngFor="let item of items">
+    <!-- <span>{{ item | json }}</span> -->
+    <span *ngIf="item.submenus && item.submenus.length > 0">
+      <button mat-menu-item [matMenuTriggerFor]="menu.subMenu">
+        <span>{{ item.nome }}</span>
+      </button>
+      <app-sub-menu #menu [items]="item.submenus"></app-sub-menu>
+    </span>
+    <span *ngIf="!item.submenus || item.submenus.length === 0">
+      <button mat-menu-item>{{ item.nome }}</button>
+    </span>
+  </span>
+</mat-menu>
