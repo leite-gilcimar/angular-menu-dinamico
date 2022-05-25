@@ -8,10 +8,11 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 export class SubMenuComponent implements OnInit {
   @Input() items: any[];
   @ViewChild('subMenu') public subMenu;
+  @Input() trigger: any;
 
   constructor() {}
 
   ngOnInit() {
-    console.log('items: ',this.items);
+    
   }
 }

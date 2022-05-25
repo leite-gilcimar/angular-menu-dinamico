@@ -25,8 +25,8 @@
 </mat-menu>
 
 <ng-container *ngFor="let item of menus">
-  <button mat-button [matMenuTriggerFor]="menu.subMenu">
+  <button mat-button [matMenuTriggerFor]="menu.subMenu" #levelOneTrigger="matMenuTrigger" (mouseenter)="levelOneTrigger.openMenu()">
     {{ item.menu.nome }}
   </button>
-  <app-sub-menu #menu [items]="item.menu.submenus"></app-sub-menu>
+  <app-sub-menu #menu [items]="item.menu.submenus" [trigger]="levelOneTrigger"></app-sub-menu>
 </ng-container>
